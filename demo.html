@@ -24,8 +24,9 @@
     </div>
 
     <div data-role="page" id="dbHomePage">
-        <div data-role="header"><a data-rel="back" data-icon="back">back</a><h1>Database Demo</h1></div>
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-position="fixed">
+            <a data-rel="back" data-icon="back">back</a>
+            <h1>Database Demo</h1>
             <div data-role="navbar">
                 <ul>
                     <li><a href="#" id="dbCreateBtn">create</a></li>
@@ -36,6 +37,9 @@
         </div>
         <div data-role="content">
             <div id="dbInfo">Database's ready!</div>
+            <div>
+                <ul data-role="listview" id="dataList" data-inset="true"></ul>
+            </div>
         </div>
         <div data-role="footer" data-position="fixed" id="status"><h4>PhoneGap/JQM</h4></div>
     </div>

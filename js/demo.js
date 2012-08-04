@@ -22,11 +22,13 @@ var demo = function() {
 				$('#dbInsertBtn').bind('click', function() {
 					console.log('Insert row to db...');
 					insertDb();
+					selectDb();
 				});
 
 				$('#dbDeleteBtn').bind('click', function() {
 					console.log('Delete row from db...');
 					deleteDb();
+					selectDb();
 				});
 			});
 		}
@@ -66,9 +68,17 @@ var demo = function() {
 		function querySuccess(tx, results) {
 		    var len = results.rows.length;
 		    logStatus("DEMO table: " + len + " rows found.");
+
+		    var dataList = $('#dataList');
+		    dataList.empty();
+
 		    for (var i=0; i<len; i++){
 		        console.log("Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).data);
+		        var listText = results.rows.item(i).id +'. '+ results.rows.item(i).data;
+		        var a = $('<a>').attr('href','#').append(listText);
+		        dataList.append($('<li>').append(a));
 		    }
+		    dataList.listview('refresh');
 		}
 
 		var db = window.openDatabase("Database", "1.0", "Db Demo", 200000);
