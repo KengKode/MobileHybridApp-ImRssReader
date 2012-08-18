@@ -3,6 +3,13 @@ var feedCache= {};
 
 function init() {
 
+    function onDeviceReady() {
+        $(document).ready(function() {
+            console.log('deviceready');
+        });
+    }
+    document.addEventListener("deviceready", onDeviceReady, false);
+
 	//handle getting and displaying the intro or feeds		
 	$("#intropage").live("pageshow",function(e) {
 		displayFeeds();

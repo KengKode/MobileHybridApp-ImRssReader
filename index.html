@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.1.1.min.css" />
     <script src="lib/jquery.js"></script>
     <script src="lib/jquery.mobile-1.1.1.min.js"></script>
-    <script type="text/javascript" src="lib/cordova-2.0.0.js"></script>
-<script src="main.js"></script>
 </head>
 
 <body>
@@ -34,10 +32,13 @@
 		
 </div>
 
+<script type="text/javascript" src="lib/cordova-2.0.0.js"></script>
+<script src="main.js"></script>
 <script>
-$("#intropage").bind("pagecreate", function(e) {
-	init();	
-});
+    $("#intropage").bind("pagecreate", function(e) {
+        console.log('init..');
+        init(); 
+    });
 </script>
 
 
