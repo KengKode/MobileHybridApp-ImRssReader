@@ -10,9 +10,7 @@ var demo = function() {
 
 			$(document).ready(function(){
 				console.log('Demo\'s ready!');
-			});
 
-			$('#dbHomePage').live('pageinit', function () {
 				$('#dbCreateBtn').bind('click', function() {
 					console.log('Create db...');
 					createDb();
@@ -31,6 +29,7 @@ var demo = function() {
 					selectDb();
 				});
 			});
+
 		}
 		document.addEventListener("deviceready", onDeviceReady, false);
 	};
@@ -120,11 +119,11 @@ var demo = function() {
 	};
 
 	return {
-		init: function() {
-			init();
-		}
+		init: init()
 	};
 
 }();
 
-demo.init();
+
+
+
